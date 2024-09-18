@@ -4,6 +4,6 @@ services:
     build: .
     volumes:
       - .:/app
-    command: python main.py
+    entrypoint: python main.py
     env_file:
       - .env

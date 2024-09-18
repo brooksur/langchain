@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  langchain-app:
+    build: .
+    volumes:
+      - .:/app
+    command: python main.py
+    env_file:
+      - .env

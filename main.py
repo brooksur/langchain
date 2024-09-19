@@ -28,4 +28,5 @@ chain = LLMChain(llm=llm, prompt=prompt)
 
 result = chain({'language': args.language, 'task': args.task})
 result_text = result['text']
+
 print(result_text)

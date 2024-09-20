@@ -1,9 +1,11 @@
 version: "3.8"
 services:
-  langchain-app:
-    build: .
+  chat-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/app
     entrypoint: python main.py
     env_file:
-      - .env
+      - ../.env

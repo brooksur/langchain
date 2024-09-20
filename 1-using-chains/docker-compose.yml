@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  using-chains:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    entrypoint: python main.py
+    env_file:
+      - ../.env

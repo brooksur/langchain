@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  using-chains:
+    build:
+      context: ./1-using-chains
+      dockerfile: Dockerfile
+    volumes:
+      - ./1-using-chains:/app
+    entrypoint: python main.py
+    env_file:
+      - .env
+
+  chat-app:
+    build:
+      context: ./2-chat-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./2-chat-app:/app
+    entrypoint: python main.py
+    env_file:
+      - .env
+
+  fact-finder:
+    build:
+      context: ./3-fact-finder
+      dockerfile: Dockerfile
+    volumes:
+      - ./3-fact-finder:/app
+    entrypoint: python prompt.py
+    env_file:
+      - .env
